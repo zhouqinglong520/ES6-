@@ -1,0 +1,66 @@
+babel 编译es6代码成es5
+    核心用法
+
+gulp 任务自动化
+
+webpack 打包
+
+基础架构
+    业务逻辑
+        页面 交互
+    自动构建
+        编译
+        辅助
+            自动刷新
+            文件合并
+            资源压缩
+    服务接口
+        数据
+        接口    
+
+编译工具(babel,webpack)
+    gulp通过二进制流操作
+    webpack-stream对gulp进行支持
+
+模板文件用.ejs
+    因为express框架 需要用ejs引擎
+
+.babelrc 为babel的编译文件，名字固定
+
+gulpfile.babel.js 当使用es6和gulp的固定名称
+
+.agrv 命令行输入以字符串解析
+
+ES6 特点
+    块作用域
+
+    解构赋值
+        左右各一种结构（左可不规范），
+    
+    正则表达式
+        .不能匹配任何字符（要求小于两个字节的字符才能被匹配）
+    
+    字符串新特性
+        模板字符串
+
+        遍历接口
+
+        新增方法
+
+        unicode表示法
+            能够处理大于两个字节的字符
+            {
+            let str='\u{20bb7}abc';
+            for(let i=0;i<str.length;i++){
+                console.log('es5',str[i]); //依旧不能正常展示
+            }
+            for(let code of str){
+                console.log('es6',code);//可以正常显示
+            }
+            }
+        babel-pollyfill 处理es的兼容性
+
+    箭头函数的this指向是定义时的取向
+                而不是运行时的this指向，所以在方法的一开始 let self= this;
+    es6中异步操作只允许用promise() 达到异步
+    
